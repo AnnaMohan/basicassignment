@@ -544,4 +544,4 @@ def my_uploads():
 if __name__ == "__main__":
     application.debug = True  # Disable debug mode in production.
     # application.run()
-    application.run(host=os.getenv("PUBLIC_IP", "0.0.0.0"), port=int(os.getenv("PORT", 5000)))
+    application.run(host=os.getenv("PUBLIC_IP"), port=int(os.getenv("PORT")))
