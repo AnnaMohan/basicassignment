@@ -25,7 +25,8 @@ pipeline {
                         cd /home/ec2-user  # Change to your deployment directory if needed
                         python3 -m venv venv
                         source venv/bin/activate
-                        #rm -rf basicassignment
+                        #rm -rf basicassignment # instead remainign whole folder
+                        pkill -f application.py # to kill the existing process to deploye new version of appln
                         sudo yum update -y
                         sudo yum install git -y
                         git clone https://github.com/AnnaMohan/basicassignment.git
@@ -40,7 +41,7 @@ pipeline {
                         # echo "Public IP: $PUBLIC_IP"
                         # export PORT=5000
                         # echo "PORT": $PORT
-                        nohup python3 -u application.py > flask.log 2>&1 &
+                        nohup python3 -u application.py >> flask.log 2>&1 & # appending logs to flask.log
                         #nohup python3 application.py > flask.log 2>&1 & # to store logs
                         #/dev/null 2>&1 & # to not to store logs 
                         #> std.out 2> std.err &
