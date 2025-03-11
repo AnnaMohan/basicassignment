@@ -61,7 +61,7 @@ pipeline {
             echo "Flask app deployed successfully!!"
         }
         failure {
-            echo "Deployment failed!"
+            echo "Deployment failed!OOPS!!"
         }
     }
 }
