@@ -39,7 +39,7 @@ pipeline {
                         echo $(pwd)
                         # export PUBLIC_IP=$(curl -s http://checkip.amazonaws.com)
                         # echo "Public IP: $PUBLIC_IP"
-                        # export PORT=5000
+                        # export PORT=5000 
                         # echo "PORT": $PORT
                         nohup python3 -u application.py >> flask.log 2>&1 & # appending logs to flask.log
                         #nohup python3 application.py > flask.log 2>&1 & # to store logs
