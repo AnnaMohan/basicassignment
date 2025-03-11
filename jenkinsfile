@@ -9,8 +9,8 @@ pipeline {
             steps {
                 script {
                     git branch: 'main', 
-                        // credentialsId: 'your-credentials-id', 
-                        url: 'https://github.com/AnnaMohan/basicassignment.git'
+                    // credentialsId: 'your-credentials-id', 
+                    url: 'https://github.com/AnnaMohan/basicassignment.git'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['8d9ba472-7d7d-4851-b1b6-424eda51a4a6']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ec2-user@ec2-44-208-29-207.compute-1.amazonaws.com << 'EOF'
+                        ssh -o StrictHostKeyChecking=no ec2-user@ec2-18-206-225-65.compute-1.amazonaws.com << 'EOF'
                         cd /home/ec2-user  # Change to your deployment directory if needed
                         python3 -m venv venv
                         source venv/bin/activate
@@ -40,9 +40,9 @@ pipeline {
                         # echo "Public IP: $PUBLIC_IP"
                         # export PORT=5000
                         # echo "PORT": $PORT
-                        python3 application.py > std.out 2> std.err &
-                        disown
-                        exit
+                        nohup python3 application.py > std.out 2> std.err &
+                        #disown #not sure why gpt suggested
+                        exit # to exit from ssh session so that pipeline will end.
                         #app.log 2>&1 &
                         #nohup python3 application.py 
                         #>/dev/null 2>&1 & 
