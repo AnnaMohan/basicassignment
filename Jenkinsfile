@@ -25,7 +25,7 @@ pipeline {
                         cd /home/ec2-user  # Change to your deployment directory if needed
                         python3 -m venv venv
                         source venv/bin/activate
-                        rm -rf basicassignment
+                        #rm -rf basicassignment
                         sudo yum update -y
                         sudo yum install git -y
                         git clone https://github.com/AnnaMohan/basicassignment.git
