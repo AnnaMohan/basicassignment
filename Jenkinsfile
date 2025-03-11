@@ -43,7 +43,7 @@ pipeline {
                         nohup python3 application.py >/dev/null 2>&1 &
                         #> std.out 2> std.err &
                         #disown #not sure why gpt suggested
-                        exit #    to exit from ssh session so that pipeline will end.
+                        exit #     to exit from ssh session so that pipeline will end.
                         #app.log 2>&1 &
                         #nohup python3 application.py 
                         #>/dev/null 2>&1 & 
