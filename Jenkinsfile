@@ -58,7 +58,7 @@ pipeline {
 
     post {
         success {
-            echo "Flask app deployed successfully!"
+            echo "Flask app deployed successfully!!"
         }
         failure {
             echo "Deployment failed!"
