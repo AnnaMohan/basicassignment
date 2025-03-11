@@ -40,7 +40,8 @@ pipeline {
                         # echo "Public IP: $PUBLIC_IP"
                         # export PORT=5000
                         # echo "PORT": $PORT
-                        nohup python3 application.py > flask.log 2>&1 & # to store logs
+                        nohup python3 -u application.py > flask.log 2>&1 &
+                        #nohup python3 application.py > flask.log 2>&1 & # to store logs
                         #/dev/null 2>&1 & # to not to store logs 
                         #> std.out 2> std.err &
                         #disown #not sure why gpt suggested
