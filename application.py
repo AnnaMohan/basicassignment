@@ -7,7 +7,7 @@ application = Flask(__name__)
 application.secret_key = 'your-secret-key'  # Replace with your own secret key
 
 # Configure logging
-logging.basicConfig(filename='flask.log', level=logging.DEBUG,
+logging.basicConfig(filename='flask.log', level=logging.DEBUG, 
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 # S3 bucket configuration (update with your bucket name)
