@@ -1,10 +1,14 @@
 import uuid
 import boto3
 import os
-from flask import Flask, url_for, session, redirect, request
+from flask import Flask, url_for, session, redirect, request, logging
 
 application = Flask(__name__)
 application.secret_key = 'your-secret-key'  # Replace with your own secret key
+
+# Configure logging
+logging.basicConfig(filename='flask.log', level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 # S3 bucket configuration (update with your bucket name)
 S3_BUCKET = "my-tf-test-bucket20250205092730828700000001"
